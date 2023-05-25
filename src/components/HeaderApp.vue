@@ -4,7 +4,13 @@ export default {
 }
 </script>
 
-<template></template>
+<template>
+    <div>
+        <h1 class="upperCase">
+            Boolflix
+        </h1>
+    </div>
+</template>
 
 <style lang="scss" scoped>
 @use '../style/specific/utility.scss' as *;

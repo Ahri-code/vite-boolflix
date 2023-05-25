@@ -16,18 +16,31 @@ export default {
         return {
             store
         }
+    },
+    created() {
+        this.getMovie(this.store.urlAPI);
+    },
+    methods: {
+        getMovie(path) {
+            this.store.loading = true;
+            axios.get(path).then(element => {
+                const result = element.data.results;
+                this.store.moviesArray.push(result);
+                this.store.loading = false;
+            });
+        }
     }
 }
 </script>
 
 <template>
-    <header>
+    <header class="w-100per h-20vh flex jc-center ai-center bg-black">
         <HeaderApp />
     </header>
-    <main>
+    <main class="w-100per flex jc-center ai-center bg-black">
         <MainApp />
     </main>
-    <footer>
+    <footer class="w-100per h-20vh flex jc-center ai-center bg-black">
         <FooterApp />
     </footer>
 </template>

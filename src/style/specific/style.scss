@@ -1,0 +1,20 @@
+h1 {
+    font-size: 50px;
+    color: red;
+}
+
+.std-width {
+    width: 80%;
+}
+
+main button {
+    width: 2rem;
+    height: 278px;
+    border: 0;
+    opacity: 0%;
+    background-color: #67676772;
+
+    &:hover {
+        opacity: 100%;
+    }
+}
