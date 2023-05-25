@@ -1,0 +1,101 @@
+// --- FLEX ---
+
+.flex {
+    display: flex;
+}
+
+// --- Justify ---
+
+.jc-center {
+    justify-content: center;
+}
+
+.jc-between {
+    justify-content: space-between;
+}
+
+// --- Align ---
+
+.ai-center {
+    align-items: center;
+}
+
+// --- Gap ---
+
+.gap-1 {
+    gap: 1rem;
+}
+
+// --- Other ---
+
+.fd-columns {
+    flex-direction: column;
+}
+
+.fw-wrap {
+    flex-wrap: wrap;
+}
+
+// --- DIMENSION ---
+
+// --- Width ---
+
+.w-100per {
+    width: 100%;
+}
+
+// --- Height ---
+
+.h-100per {
+    height: 100%;
+}
+
+.h-20vh {
+    height: 20vh;
+}
+
+// --- Padding ---
+
+.p-1 {
+    padding: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+// --- COLORS ---
+
+// --- Background ---
+
+.bg-white {
+    background-color: #fff;
+}
+
+.bg-black {
+    background-color: #000;
+}
+
+// --- Text Color ---
+
+.c-white {
+    color: #fff;
+}
+
+.c-black {
+    color: #000;
+}
+
+// --- TEXT ---
+
+// --- Text Align ---
+
+.ta-center {
+    text-align: center;
+}
+
+// --- Text Decoration ---
+
+.upperCase {
+    text-transform: uppercase;
+}
