@@ -7,12 +7,31 @@ h1 {
     width: 80%;
 }
 
+input {
+    width: 40%;
+    background-color: black;
+    color: gray;
+    padding: 0.5rem 1rem;
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
 main button {
     width: 2rem;
     height: 278px;
     border: 0;
     opacity: 0%;
     background-color: #67676772;
+
+    &:hover {
+        opacity: 100%;
+    }
+}
+
+.movieInfo {
+    opacity: 0%;
+    height: 278px;
+    background-color: #3e3e3eac;
 
     &:hover {
         opacity: 100%;

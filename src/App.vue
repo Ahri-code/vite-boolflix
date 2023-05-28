@@ -25,9 +25,28 @@ export default {
             this.store.loading = true;
             axios.get(path).then(element => {
                 const result = element.data.results;
+                this.store.moviesArray = [];
                 this.store.moviesArray.push(result);
                 this.store.loading = false;
+                console.log(this.store.moviesArray);
             });
+        },
+        movieSearch() {
+            this.store.loading = true;
+            if (this.store.search == "") {
+                this.getMovie(this.store.urlAPI);
+            }
+            else {
+                let url = this.store.searchMovieAPI;
+                url += this.store.search
+                axios.get(url).then(element => {
+                    const result = element.data.results;
+                    this.store.moviesArray = [];
+                    this.store.moviesArray.push(result);
+                    this.store.loading = false;
+                });
+            }
+
         }
     }
 }
@@ -37,7 +56,8 @@ export default {
     <header class="w-100per h-20vh flex jc-center ai-center bg-black">
         <HeaderApp />
     </header>
-    <main class="w-100per flex jc-center ai-center bg-black">
+    <main class="w-100per flex jc-center ai-center fd-columns bg-black">
+        <input @input="movieSearch" v-model="store.search">
         <MainApp />
     </main>
     <footer class="w-100per h-20vh flex jc-center ai-center bg-black">

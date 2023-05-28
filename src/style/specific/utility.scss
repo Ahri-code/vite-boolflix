@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.jc-end {
+    justify-content: end;
+}
+
 .jc-between {
     justify-content: space-between;
 }
@@ -21,6 +25,10 @@
 }
 
 // --- Gap ---
+
+.gap-05 {
+    gap: 0.5rem;
+}
 
 .gap-1 {
     gap: 1rem;
@@ -55,6 +63,10 @@
 }
 
 // --- Padding ---
+
+.p-05 {
+    padding: 0.5rem;
+}
 
 .p-1 {
     padding: 1rem;
