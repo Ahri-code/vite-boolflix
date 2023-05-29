@@ -19,8 +19,13 @@ export default {
     },
     created() {
         this.getMovie(this.store.urlAPI);
+        this.getSerie(this.store.seriesAPI);
     },
     methods: {
+        searchAll() {
+            this.movieSearch();
+            this.seriesSearch();
+        },
         getMovie(path) {
             this.store.loading = true;
             axios.get(path).then(element => {
@@ -28,7 +33,6 @@ export default {
                 this.store.moviesArray = [];
                 this.store.moviesArray.push(result);
                 this.store.loading = false;
-                console.log(this.store.moviesArray);
             });
         },
         movieSearch() {
@@ -46,18 +50,43 @@ export default {
                     this.store.loading = false;
                 });
             }
-
+        },
+        getSerie(path) {
+            this.store.loading = true;
+            axios.get(path).then(element => {
+                const result = element.data.results;
+                this.store.seriesArray = [];
+                this.store.seriesArray.push(result);
+                this.store.loading = false;
+            });
+        },
+        seriesSearch() {
+            this.store.loading = true;
+            if (this.store.search == "") {
+                this.getSeries(this.store.seriesAPI);
+            }
+            else {
+                let url = this.store.searchSeriesAPI;
+                url += this.store.search
+                axios.get(url).then(element => {
+                    const result = element.data.results;
+                    this.store.seriesArray = [];
+                    this.store.seriesArray.push(result);
+                    this.store.loading = false;
+                    console.log(this.store.seriesArray);
+                });
+            }
         }
     }
 }
 </script>
 
 <template>
-    <header class="w-100per h-20vh flex jc-center ai-center bg-black">
+    <header class="w-100per flex jc-center ai-center bg-black">
         <HeaderApp />
     </header>
     <main class="w-100per flex jc-center ai-center fd-columns bg-black">
-        <input @input="movieSearch" v-model="store.search">
+        <input @input="searchAll" v-model="store.search">
         <MainApp />
     </main>
     <footer class="w-100per h-20vh flex jc-center ai-center bg-black">

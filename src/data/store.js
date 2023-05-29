@@ -3,6 +3,8 @@ import { reactive } from "vue";
 export const store = reactive({
     urlAPI: "https://api.themoviedb.org/3/discover/movie?api_key=1a5990cf8ebd3b17beab02e7c9255f22",
     searchMovieAPI: "https://api.themoviedb.org/3/search/movie?api_key=1a5990cf8ebd3b17beab02e7c9255f22&query=",
+    seriesAPI: "https://api.themoviedb.org/3/discover/tv?api_key=1a5990cf8ebd3b17beab02e7c9255f22",
+    searchSeriesAPI: "https://api.themoviedb.org/3/search/tv?api_key=1a5990cf8ebd3b17beab02e7c9255f22&query=",
     loading: true,
     search: "",
     moviesArray: [],

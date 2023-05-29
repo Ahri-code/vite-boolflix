@@ -7,6 +7,10 @@ h1 {
     width: 80%;
 }
 
+header {
+    height: 15vh;
+}
+
 input {
     width: 40%;
     background-color: black;
@@ -30,7 +34,7 @@ main button {
 
 .movieInfo {
     opacity: 0%;
-    height: 278px;
+    height: 231px;
     background-color: #3e3e3eac;
 
     &:hover {
